@@ -56,4 +56,12 @@ public class AnomalyConfig {
     public static void setInduceDatabaseOutage(boolean induceDatabaseOutage) {
         AnomalyConfig.induceDatabaseOutage = induceDatabaseOutage;
     }
+
+    public static boolean isAnyAnomalyActive() {
+        return induceHighVisitorRate ||
+               induceHighErrorRate ||
+               induceHighRequestRateFromSingleIP ||
+               induceHighDistinctURLsFromSingleIP ||
+               induceLowRequestRate;
+    }
 }
